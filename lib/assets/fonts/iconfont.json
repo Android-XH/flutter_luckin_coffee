@@ -788,6 +788,13 @@
       "font_class": "system-warning3",
       "unicode": "e725",
       "unicode_decimal": 59173
+    },
+    {
+      "icon_id": "1069116",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
     }
   ]
 }

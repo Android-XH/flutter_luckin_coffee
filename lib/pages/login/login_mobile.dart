@@ -60,8 +60,10 @@ class _LoginMailState extends State<LoginMail> {
   /// 获取验证码
   getEmailCode() async {
     try {
-      var res = await G.req.verificationCode.getMailCode(mobile: phone['value']);
+      var res =
+          await G.req.verificationCode.getMailCode(mobile: phone['value']);
       if (res.data == null) return;
+      G.toast('获取验证码成功');
       startTime = G.getTime();
       countDown();
     } catch (e) {
@@ -98,16 +100,17 @@ class _LoginMailState extends State<LoginMail> {
     prefs.remove('user');
 
     try {
-      var res = await G.req.user.register(mobile: phone['value'], code: code['value']);
+      var res = await G.req.user
+          .register(mobile: phone['value'], code: code['value']);
       var data = res.data;
-
-      if (data == null) return;
-      Map json = data['data'];
-      G.user.init(json);
-      await G.toast('登录成功');
-      G.pushNamed('/mine');
+      if(data['errno']==0){
+        Map json = data['userInfo'];
+        G.user.init(json);
+        await G.toast('登录成功');
+        G.pushNamed('/mine');
+      }
     } catch (e) {
-      G.toast('登录失败');
+      LogUtil.e("登录异常"+e.toString());
     }
   }
 
@@ -133,7 +136,7 @@ class _LoginMailState extends State<LoginMail> {
         child: Column(
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(bottom: 20),
+              margin: EdgeInsets.only(bottom: 40),
               width: 65,
               height: 65,
               child: Image.asset(
@@ -147,7 +150,8 @@ class _LoginMailState extends State<LoginMail> {
               height: 55,
               decoration: BoxDecoration(border: G.borderBottom()),
               child: TextField(
-                keyboardType: TextInputType.emailAddress,
+                keyboardType: TextInputType.phone,
+                maxLength: 11,
                 decoration: InputDecoration(
                     counterText: "",
                     border: InputBorder.none,
@@ -206,10 +210,7 @@ class _LoginMailState extends State<LoginMail> {
               margin: EdgeInsets.only(top: 20),
               child: AButton.normal(
                   width: 300,
-                  child:
-                  Text('登录/注册',
-                      style:TextStyle(fontSize: 18))
-                  ,
+                  child: Text('登录/注册', style: TextStyle(fontSize: 18)),
                   bgColor: rgba(30, 96, 249, 1),
                   borderRadius: BorderRadius.circular(47.0),
                   color: hex('#fff'),

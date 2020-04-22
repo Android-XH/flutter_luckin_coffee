@@ -58,6 +58,7 @@ class _MyAppState extends State<MyApp> {
     }
 
     return MaterialApp(
+      debugShowCheckedModeBanner:false,
       navigatorKey: G.navigatorKey,
       title: '怡宁健康互联网医院',
       theme: ThemeData(

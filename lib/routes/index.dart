@@ -29,10 +29,11 @@ import 'package:flutter_luckin_coffee/stand_ui/stand_dialog/example_stand_dialog
 class Router {
   static final _routes = {    
     /// TODO: 从非toolbar页面跳转到toolbar页面的入场动画不一致
+
+    '/': (BuildContext context, { Object args }) => LoginMail(),
     // 从非toolbar页面（子页面）跳转到toolbar页面（主页）实现：
     // pushName到对应的路由，因为Toolbar是单例模式，所以只会创建一个
     // pushName之后，在ToolBar，initState中获取当前的路由，实现切换页面
-    '/': (BuildContext context, { Object args }) => Toolbar(),
     '/mine': (BuildContext context, { Object args }) => Toolbar(),
     '/order': (BuildContext context, { Object args }) => Toolbar(),
     '/shopping_cart': (BuildContext context, { Object args }) => Toolbar(),

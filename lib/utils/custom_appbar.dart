@@ -27,7 +27,7 @@ AppBar customAppbar({
     backgroundColor: hex('#fff'),
     elevation: 0,
     leading: context == null ? null : InkWell(
-      child: icontupian8(color: rgba(44, 44, 44, 1), size: 16),
+      child: icontupian8(size: 18,color: rgba(44, 44, 44, 1)),
       onTap: () => Navigator.pop(context),
     ),
     bottom: PreferredSize(

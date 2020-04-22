@@ -10,6 +10,7 @@ Dio initDio() {
       //测试域名 https://api.yiningjk.com:9182/
       //生产域名 https://api.yiningjk.com:8280/
       baseUrl: "https://api.yiningjk.com:9182/",
+      responseType: ResponseType.json,
       receiveTimeout: 1000 * 5,
       connectTimeout: 1000 * 10);
 
@@ -24,9 +25,12 @@ Dio initDio() {
   }, onResponse: (Response response) async {
     // 在返回响应数据之前做一些预处理
     LogUtil.e('服务器返回数据>>> $response');
-    if (response.data['errno'] != 0) {
-      await G.toast(response.data['errmsg']);
-      response = null;
+    var parsedJson = json.decode(response.toString());
+    if (parsedJson['errno'] != 0) {
+      await G.toast(parsedJson['errmsg']);
+      response.data=null;
+    }else{
+      response.data=parsedJson;
     }
     return response;
   }, onError: (DioError e) async {
