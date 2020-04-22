@@ -160,7 +160,6 @@ class _LoginMailState extends State<LoginMail> {
                       fontSize: 14,
                     )),
                 onChanged: (e) {
-//                  RegExp regExp = RegExp("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+");
                   setState(() {
                     phone['value'] = e;
                     phone['verify'] = true;

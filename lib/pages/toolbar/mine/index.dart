@@ -4,6 +4,7 @@ import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/user/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/user/user_info_entity.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
+import 'package:flutter_luckin_coffee/utils/LogUtil.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class Mine extends StatefulWidget {
@@ -159,7 +160,7 @@ class _MineState extends State<Mine> {
 
   ARow buildUser() {
     UserInfoEntity userData = G.user.data;
-
+    LogUtil.e(userData);
     return ARow(
       height: 55,
       color: Colors.transparent,
