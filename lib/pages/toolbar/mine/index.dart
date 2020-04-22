@@ -2,6 +2,7 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/user/data.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/user/user_info_entity.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
@@ -157,7 +158,7 @@ class _MineState extends State<Mine> {
   }
 
   ARow buildUser() {
-    UserData userData = G.user.data;
+    UserInfoEntity userData = G.user.data;
 
     return ARow(
       height: 55,
@@ -167,7 +168,7 @@ class _MineState extends State<Mine> {
       leftChild: ClipRRect(
         borderRadius: new BorderRadius.circular(27),
         child: Image.asset(
-          'lib/assets/images/mine/mine1.png', 
+          userData==null?'lib/assets/images/mine/mine1.jpg':userData.userInfo.avatarUrl,
           width: 55, 
           height: 55, 
           fit: BoxFit.cover,
@@ -175,7 +176,7 @@ class _MineState extends State<Mine> {
       ),
       centerChild: Container(
         margin: EdgeInsets.only(left: 10),
-        child: Text(userData == null ? '立即登录' : userData.nick, style: TextStyle(
+        child: Text(userData == null ? '立即登录' : userData.userInfo.doctorName, style: TextStyle(
           color: rgba(255, 255, 255, 1),
           fontSize: 18
         ),),

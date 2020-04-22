@@ -12,7 +12,7 @@ import 'package:flutter_luckin_coffee/components/a_stepper/example.dart';
 // luckin coffee 页面
 import 'package:flutter_luckin_coffee/pages/coupon/index.dart';
 import 'package:flutter_luckin_coffee/pages/diningcode/dining_code.dart';
-import 'package:flutter_luckin_coffee/pages/login/login_mail.dart';
+import 'package:flutter_luckin_coffee/pages/login/login_mobile.dart';
 import 'package:flutter_luckin_coffee/pages/login/login_method.dart';
 import 'package:flutter_luckin_coffee/pages/login/user_agreement.dart';
 import 'package:flutter_luckin_coffee/pages/order/order_confirm.dart';

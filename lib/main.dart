@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/provider/counter_model.dart';
 import 'package:flutter_luckin_coffee/provider/order_model.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
+import 'package:flutter_luckin_coffee/utils/LogUtil.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/routes/index.dart';
 import 'package:provider/provider.dart';
@@ -20,6 +21,7 @@ void main() async {
   _shoppingCart = prefs.getString('shoppingCart');
   String user = prefs.getString('user');
 
+  LogUtil.init(true);
   if (user != null && user.isNotEmpty) {
     /// 初始化user
     G.user.init(json.decode(user));

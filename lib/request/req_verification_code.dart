@@ -7,15 +7,15 @@ class ReqVerificationCode {
 
   ReqVerificationCode(this._dio);
 
-  /// 获取邮箱验证码
+  /// 获取验证码
   Future<Response> getMailCode({
-    /// 邮箱
-    @required String mail
+    /// 手机号
+    @required String mobile
   }) {
-    return _dio.get(
-      '/verification/mail/get',
-      queryParameters: {
-        "mail": mail
+    return _dio.post(
+      'doctor/auth/regCaptcha',
+        data: {
+        "mobile": mobile
       }
     );
   }
