@@ -62,7 +62,6 @@ class _LoginMailState extends State<LoginMail> {
     try {
       var res = await G.req.verificationCode.getMailCode(mobile: phone['value']);
       if (res.data == null) return;
-      G.toast('获取验证码成功！');
       startTime = G.getTime();
       countDown();
     } catch (e) {
@@ -101,6 +100,7 @@ class _LoginMailState extends State<LoginMail> {
     try {
       var res = await G.req.user.register(mobile: phone['value'], code: code['value']);
       var data = res.data;
+
       if (data == null) return;
       Map json = data['data'];
       G.user.init(json);
