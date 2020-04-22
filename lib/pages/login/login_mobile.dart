@@ -134,8 +134,8 @@ class _LoginMailState extends State<LoginMail> {
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(bottom: 20),
-              width: 130,
-              height: 130,
+              width: 65,
+              height: 65,
               child: Image.asset(
                 'lib/assets/images/icon_logo.png',
                 fit: BoxFit.cover,
