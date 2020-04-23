@@ -129,7 +129,7 @@ class _LoginMailState extends State<LoginMail> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: customAppbar(context: context, borderBottom: false),
+      appBar: customAppbar(context: null, borderBottom: false),
       body: Container(
         color: hex('#fff'),
         padding: EdgeInsets.only(left: 35, right: 35, top: 87),
