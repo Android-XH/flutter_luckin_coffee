@@ -520,7 +520,7 @@ class _MineState extends State<Mine> {
                   children: <Widget>[
                     Container(
                       child: Image.asset(
-                        'lib/assets/images/mine/icon_question.png',
+                        'lib/assets/images/mine/icon_setting.png',
                         width: 28,
                         height: 28,
                       ),
@@ -528,7 +528,7 @@ class _MineState extends State<Mine> {
                     ),
                     Container(
                       child: new Text(
-                        '常见问题',
+                        '设置',
                         style: TextStyle(
                           fontSize: 14,
                           color: rgba(0, 0, 0, 0.45),
@@ -538,7 +538,7 @@ class _MineState extends State<Mine> {
                   ],
                 ),
                 onPressed: () async {
-                  await G.toast('点击常见问题');
+                  await G.toast('点击设置');
                 })),
         Expanded(
           flex: 1,
