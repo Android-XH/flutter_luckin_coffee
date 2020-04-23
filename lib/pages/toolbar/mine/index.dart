@@ -220,7 +220,7 @@ class _MineState extends State<Mine> {
 
   ARow buildLog() {
     return ARow(
-      height: 100,
+      height: 80,
       leftChild: Container(
         child: Column(
           children: <Widget>[
