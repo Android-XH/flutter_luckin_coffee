@@ -6,7 +6,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Launch extends StatefulWidget {
   @override
@@ -39,7 +38,7 @@ class _PageState extends State<Launch> {
         if (_countdownNum > 0) {
           _countdownNum--;
         } else {
-//          G.pushNamed('/login_mail');
+          G.pushNamed('/login_mail');
           _timer.cancel();
           _timer = null;
         }
