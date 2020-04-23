@@ -21,7 +21,7 @@ export './custom_appbar.dart';
 class G {
   static final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
   /// toolbar routeName
-  static final List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
+  static final List toobarRouteNameList = ['/', '/login_mail','/menu', '/order', '/shopping_cart', '/mine'];
 
   /// 处理商品描述
   static String handleGoodsDesc(String str) {
@@ -35,9 +35,9 @@ class G {
     => Fluttertoast.showToast(
       msg: text,
       toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
+      gravity: ToastGravity.BOTTOM,
       timeInSecForIos: 1,
-      backgroundColor: Colors.red,
+      backgroundColor:rgba(30,96,249,.45),
       textColor: Colors.white,
       fontSize: 16.0
     );

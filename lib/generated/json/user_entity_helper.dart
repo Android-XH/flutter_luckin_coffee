@@ -1,8 +1,10 @@
-import 'package:flutter_luckin_coffee/jsonserialize/user/user_info_entity.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/user/user_entity.dart';
+import 'package:flutter_luckin_coffee/utils/LogUtil.dart';
 
-userInfoEntityFromJson(UserInfoEntity data, Map<String, dynamic> json) {
+userEntityFromJson(UserEntity data, Map<String, dynamic> json) {
 	if (json['userInfo'] != null) {
-		data.userInfo = new UserInfoUserInfo().fromJson(json['userInfo']);
+		data.userInfo = new UserUserInfo().fromJson(json['userInfo']);
+		LogUtil.e('转换userInfo$data');
 	}
 	if (json['expireDate'] != null) {
 		data.expireDate = json['expireDate']?.toInt();
@@ -13,7 +15,7 @@ userInfoEntityFromJson(UserInfoEntity data, Map<String, dynamic> json) {
 	return data;
 }
 
-Map<String, dynamic> userInfoEntityToJson(UserInfoEntity entity) {
+Map<String, dynamic> userEntityToJson(UserEntity entity) {
 	final Map<String, dynamic> data = new Map<String, dynamic>();
 	if (entity.userInfo != null) {
 		data['userInfo'] = entity.userInfo.toJson();
@@ -23,7 +25,7 @@ Map<String, dynamic> userInfoEntityToJson(UserInfoEntity entity) {
 	return data;
 }
 
-userInfoUserInfoFromJson(UserInfoUserInfo data, Map<String, dynamic> json) {
+userUserInfoFromJson(UserUserInfo data, Map<String, dynamic> json) {
 	if (json['id'] != null) {
 		data.id = json['id']?.toInt();
 	}
@@ -67,7 +69,7 @@ userInfoUserInfoFromJson(UserInfoUserInfo data, Map<String, dynamic> json) {
 		data.isPrescription = json['isPrescription'];
 	}
 	if (json['userLog'] != null) {
-		data.userLog = new UserInfoUserInfoUserLog().fromJson(json['userLog']);
+		data.userLog = new UserUserInfoUserLog().fromJson(json['userLog']);
 	}
 	if (json['introduction'] != null) {
 		data.introduction = json['introduction']?.toString();
@@ -75,7 +77,7 @@ userInfoUserInfoFromJson(UserInfoUserInfo data, Map<String, dynamic> json) {
 	return data;
 }
 
-Map<String, dynamic> userInfoUserInfoToJson(UserInfoUserInfo entity) {
+Map<String, dynamic> userUserInfoToJson(UserUserInfo entity) {
 	final Map<String, dynamic> data = new Map<String, dynamic>();
 	data['id'] = entity.id;
 	data['doctorName'] = entity.doctorName;
@@ -98,12 +100,12 @@ Map<String, dynamic> userInfoUserInfoToJson(UserInfoUserInfo entity) {
 	return data;
 }
 
-userInfoUserInfoUserLogFromJson(UserInfoUserInfoUserLog data, Map<String, dynamic> json) {
+userUserInfoUserLogFromJson(UserUserInfoUserLog data, Map<String, dynamic> json) {
 	if (json['star'] != null) {
-		data.star = json['star']?.toDouble();
+		data.star = json['star']?.toInt();
 	}
 	if (json['good'] != null) {
-		data.good = json['good']?.toDouble();
+		data.good = json['good']?.toInt();
 	}
 	if (json['monthMoney'] != null) {
 		data.monthMoney = json['monthMoney']?.toDouble();
@@ -117,7 +119,7 @@ userInfoUserInfoUserLogFromJson(UserInfoUserInfoUserLog data, Map<String, dynami
 	return data;
 }
 
-Map<String, dynamic> userInfoUserInfoUserLogToJson(UserInfoUserInfoUserLog entity) {
+Map<String, dynamic> userUserInfoUserLogToJson(UserUserInfoUserLog entity) {
 	final Map<String, dynamic> data = new Map<String, dynamic>();
 	data['star'] = entity.star;
 	data['good'] = entity.good;

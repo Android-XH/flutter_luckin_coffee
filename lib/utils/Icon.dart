@@ -220,6 +220,21 @@ Icon icontupian19({double size = 18.0, Color color}) => Icon(
       size: size,
       color: color,
     );
+Icon iconstart({double size = 18.0, Color color}) => Icon(
+  IconData(0xe6f6, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+Icon iconEdit({double size = 18.0, Color color}) => Icon(
+  IconData(0xe6d2, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+Icon iconMyCard({double size = 18.0, Color color}) => Icon(
+  IconData(0xe6f7, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
 
 Icon icontupian20({double size = 18.0, Color color}) => Icon(
       IconData(0xe61f, fontFamily: 'iconfont'),

@@ -12,6 +12,7 @@ import 'package:flutter_luckin_coffee/components/a_stepper/example.dart';
 // luckin coffee 页面
 import 'package:flutter_luckin_coffee/pages/coupon/index.dart';
 import 'package:flutter_luckin_coffee/pages/diningcode/dining_code.dart';
+import 'package:flutter_luckin_coffee/pages/launch/launch.dart';
 import 'package:flutter_luckin_coffee/pages/login/login_mobile.dart';
 import 'package:flutter_luckin_coffee/pages/login/login_method.dart';
 import 'package:flutter_luckin_coffee/pages/login/user_agreement.dart';
@@ -30,7 +31,7 @@ class Router {
   static final _routes = {    
     /// TODO: 从非toolbar页面跳转到toolbar页面的入场动画不一致
 
-    '/': (BuildContext context, { Object args }) => LoginMail(),
+    '/': (BuildContext context, { Object args }) => Toolbar(),
     // 从非toolbar页面（子页面）跳转到toolbar页面（主页）实现：
     // pushName到对应的路由，因为Toolbar是单例模式，所以只会创建一个
     // pushName之后，在ToolBar，initState中获取当前的路由，实现切换页面

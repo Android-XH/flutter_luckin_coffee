@@ -1,12 +1,12 @@
 import 'package:flutter_luckin_coffee/generated/json/base/json_convert_content.dart';
 
-class UserInfoEntity with JsonConvert<UserInfoEntity> {
-	UserInfoUserInfo userInfo;
+class UserEntity with JsonConvert<UserEntity> {
+	UserUserInfo userInfo;
 	int expireDate;
 	String token;
 }
 
-class UserInfoUserInfo with JsonConvert<UserInfoUserInfo> {
+class UserUserInfo with JsonConvert<UserUserInfo> {
 	int id;
 	String doctorName;
 	String departmentName;
@@ -21,13 +21,13 @@ class UserInfoUserInfo with JsonConvert<UserInfoUserInfo> {
 	bool isRegister;
 	String isAuth;
 	bool isPrescription;
-	UserInfoUserInfoUserLog userLog;
+	UserUserInfoUserLog userLog;
 	String introduction;
 }
 
-class UserInfoUserInfoUserLog with JsonConvert<UserInfoUserInfoUserLog> {
-	double star;
-	double good;
+class UserUserInfoUserLog with JsonConvert<UserUserInfoUserLog> {
+	int star;
+	int good;
 	double monthMoney;
 	int orderNum;
 	int patientNum;

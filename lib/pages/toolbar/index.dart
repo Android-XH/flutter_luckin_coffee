@@ -11,6 +11,7 @@ import 'package:flutter_luckin_coffee/pages/toolbar/home/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/mine/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/order/index.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/index.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 class Toolbar extends StatefulWidget {
@@ -19,7 +20,7 @@ class Toolbar extends StatefulWidget {
 
   // 初始化所有的toolbar页面
   static Home _home = Home();
-  static Menu _menu = Menu();
+  static ShoppingCart shoppingCart = ShoppingCart();
   static Order _order = Order();
   static Mine _mine = Mine();
 
@@ -27,7 +28,7 @@ class Toolbar extends StatefulWidget {
   /// 所有toolbar页面
   final Map<int, Map> pages = { 
     0: _createPage(_home, appbar: _home.getAppBar(), routeName: '/'),
-    1: _createPage(_menu, appbar: _menu.getAppBar(), routeName: '/menu'),
+    1: _createPage(shoppingCart, appbar: shoppingCart.getAppBar(), routeName: '/menu'),
     2: _createPage(_order, appbar: _order.getAppBar(), routeName: '/order'),
     3: _createPage(_mine, appbar: _mine.getAppBar(), routeName: '/mine')
   };
@@ -114,10 +115,10 @@ class _NavigationState extends State<Toolbar> {
             BottomNavigationBarItem(icon: iconlogoNotText(),title: Text('首页'),),
             BottomNavigationBarItem(icon: messageIcon(),title: Text('消息'),),
             BottomNavigationBarItem(icon: iconorder(),title: Text('患者管理'),),
-            BottomNavigationBarItem(icon: iconmine(),title: Text('我的'),),  
+            BottomNavigationBarItem(icon: iconmine(),title: Text('我的'),),
           ],
-          unselectedFontSize: 10, // 未选中字体大小
-          selectedFontSize: 10, // 选中字体大小
+          unselectedFontSize: 12, // 未选中字体大小
+          selectedFontSize: 15, // 选中字体大小
           selectedItemColor: rgba(43, 76, 126, 1), // 选中字体颜色
           currentIndex: currentIndex,
           onTap: (index) {

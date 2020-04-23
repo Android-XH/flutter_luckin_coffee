@@ -52,7 +52,7 @@ class ARow extends StatelessWidget {
         padding: padding == null ? EdgeInsets.symmetric(horizontal: 15) : padding,
         margin: margin == null ? EdgeInsets.all(0) : margin,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             // left

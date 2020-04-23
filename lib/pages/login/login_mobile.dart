@@ -102,9 +102,9 @@ class _LoginMailState extends State<LoginMail> {
     try {
       var res = await G.req.user
           .register(mobile: phone['value'], code: code['value']);
-      var data = res.data;
+      Map<String, dynamic>  data = res.data;
       if(data['errno']==0){
-        Map json = data['userInfo'];
+        Map json = data['data'];
         G.user.init(json);
         await G.toast('登录成功');
         G.pushNamed('/mine');
