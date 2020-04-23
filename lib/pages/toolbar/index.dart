@@ -119,7 +119,7 @@ class _NavigationState extends State<Toolbar> {
           ],
           unselectedFontSize: 12, // 未选中字体大小
           selectedFontSize: 15, // 选中字体大小
-          selectedItemColor: rgba(43, 76, 126, 1), // 选中字体颜色
+          selectedItemColor: rgba(51,103,243,1), // 选中字体颜色
           currentIndex: currentIndex,
           onTap: (index) {
             setState(() {
