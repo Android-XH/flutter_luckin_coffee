@@ -151,7 +151,7 @@ class _MineState extends State<Mine> {
                 Container(
                   margin: EdgeInsets.only(top: 5, left: 5),
                   child: new Text(
-                      userData == null ? '4.0' : userData.userInfo.userLog.star,
+                      '4.0',
                       style: TextStyle(
                         color: rgba(255, 98, 0, 1),
                         fontSize: 16,
