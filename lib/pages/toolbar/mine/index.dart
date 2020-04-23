@@ -190,7 +190,9 @@ class _MineState extends State<Mine> {
                         ))),
                 Container(
                     margin: EdgeInsets.only(top: 5, left: 10),
-                    child: new Text('心理卫生科',
+                    child: new Text( userData == null
+                        ? '心理卫生科'
+                        : userData.userInfo.departmentName,
                         style: TextStyle(
                           color: rgba(51, 51, 51, 1),
                           fontSize: 15,
@@ -219,14 +221,19 @@ class _MineState extends State<Mine> {
   }
 
   ARow buildLog() {
+    UserEntity userData = G.user.data;
+    int money=userData==null?0:userData.userInfo.userLog.good;
+    int orderNum=userData==null?0:userData.userInfo.userLog.orderNum;
+    int serviceNum=userData==null?0:userData.userInfo.userLog.patientNum;
     return ARow(
-      height: 80,
+      height: 70,
       leftChild: Container(
         child: Column(
           children: <Widget>[
             Container(
+              margin: EdgeInsets.only(top: 5),
               child: new Text(
-                '599',
+                '$money',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -234,6 +241,7 @@ class _MineState extends State<Mine> {
               ),
             ),
             Container(
+              margin: EdgeInsets.only(top: 10),
               child: new Text(
                 '本月收入/元',
                 style: TextStyle(
@@ -249,8 +257,9 @@ class _MineState extends State<Mine> {
         child: Column(
           children: <Widget>[
             Container(
+              margin: EdgeInsets.only(top: 5),
               child: new Text(
-                '599',
+                '$orderNum',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -258,6 +267,7 @@ class _MineState extends State<Mine> {
               ),
             ),
             Container(
+              margin: EdgeInsets.only(top: 10),
               child: new Text(
                 '问诊数/次',
                 style: TextStyle(
@@ -273,8 +283,9 @@ class _MineState extends State<Mine> {
         child: Column(
           children: <Widget>[
             Container(
+              margin: EdgeInsets.only(top: 5),
               child: new Text(
-                '599',
+                '$serviceNum',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -282,6 +293,7 @@ class _MineState extends State<Mine> {
               ),
             ),
             Container(
+              margin: EdgeInsets.only(top: 10),
               child: new Text(
                 '服务人数/人',
                 style: TextStyle(
@@ -382,16 +394,16 @@ class _MineState extends State<Mine> {
         Expanded(
             flex: 1,
             child: AButton.normal(
-                height: 60,
+                height: 70,
                 child: Column(
                   children: <Widget>[
                     Container(
+                      margin: EdgeInsets.only(top: 10),
                       child: Image.asset(
                         'lib/assets/images/mine/icon_my_order.png',
                         width: 28,
                         height: 28,
                       ),
-                      margin: EdgeInsets.only(top: 5),
                     ),
                     Container(
                       child: new Text(
@@ -410,16 +422,16 @@ class _MineState extends State<Mine> {
         Expanded(
             flex: 1,
             child: AButton.normal(
-                height: 60,
+                height: 70,
                 child: Column(
                   children: <Widget>[
                     Container(
+                      margin: EdgeInsets.only(top: 10),
                       child: Image.asset(
                         'lib/assets/images/mine/icon_recipe_history.png',
                         width: 28,
                         height: 28,
                       ),
-                      margin: EdgeInsets.only(top: 5),
                     ),
                     Container(
                       child: new Text(
@@ -438,7 +450,7 @@ class _MineState extends State<Mine> {
         Expanded(
           flex: 1,
           child: AButton.normal(
-              height: 60,
+              height: 70,
               child: Column(
                 children: <Widget>[
                   Container(
@@ -447,7 +459,7 @@ class _MineState extends State<Mine> {
                       width: 28,
                       height: 28,
                     ),
-                    margin: EdgeInsets.only(top: 5),
+                    margin: EdgeInsets.only(top: 10),
                   ),
                   Container(
                     child: new Text(
